@@ -23,8 +23,8 @@ dependencies {
     compile "io.cucumber:cucumber-java:${cucumberVersion}"
     compile "io.cucumber:cucumber-core:${cucumberVersion}"
     compile "io.cucumber:cucumber-junit:${cucumberVersion}"
-    //compile "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
-    //compile "net.serenity-bdd:serenity-cucumber4:${serenityCucumber4Version}"
+    compile "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    compile "net.serenity-bdd:serenity-cucumber4:${serenityCucumber4Version}"
 
     compile "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     compile "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
