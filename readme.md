@@ -1,4 +1,4 @@
-#### basic cucumber project
+## Basic cucumber project
 
 dont forget to define **glue** in **run configuration** if you want to run feature file directly
 
