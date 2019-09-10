@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'mh.example.cucumber'
+version '1.0-SNAPSHOT'
+
+wrapper.gradleVersion = '5.5.1'
+def cucumberVersion = '4.7.1'
+def junitVersion = '5.5.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:${junitVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task specific(type: Test) << {
+    include "RunCucumberDefault.class"
+}
