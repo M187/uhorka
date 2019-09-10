@@ -1,4 +1,4 @@
-package mh.example.steps;
+package mh.example.gherkinDef;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,7 +22,7 @@ public class DefaultStepDef {
         System.out.println(" ----> Hello world! <---- ");
     }
 
-    @Then("^It is written$")
+    @Then("^Assertion passes$")
     public void someAssert(){
         assertTrue(true);
     }
