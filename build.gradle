@@ -39,13 +39,46 @@ configurations {
     cucumberRuntime.extendsFrom testRuntime
 }
 
-task cucumber() {
+task cucu() {
     dependsOn assemble, compileTestJava
     doLast {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = ['--plugin', 'pretty', '--glue', 'mh.example.gherkinDef', 'src/test/resources']
+        }
+    }
+}
+
+task cucu1() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'mh.example.gherkinDef', 'src/test/resources/1_default.feature']
+        }
+    }
+}
+
+task cucu2() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'mh.example.gherkinDef', 'src/test/resources/2_serenity.feature']
+        }
+    }
+}
+
+task cucuTag() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'mh.example.gherkinDef', 'src/test/resources', '--tags', '@DefaultTest']
         }
     }
 }
